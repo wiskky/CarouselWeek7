@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
-
-<body>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Slider</title>
+  <link rel="stylesheet" href="styles.css">
   
+</head>
+<body>
+  <!-- Slideshow container -->
+<div class="slideshow-container">
 
-  <img src="" id="slider_img" class="slider_img" pos="" alt="image1">
-  <button type="button" class="slider_btn hide">Prev</button><button type="button" class="slider_btn hide">Next</button>
-  <script src="script.js"></script>
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 10</div>
+    <img src="images/img1.jpg" alt="image1"> 
+  </div>
 
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 10</div>
+    <img src="images/img2.jpg" alt="image2">
+  </div>
 
-  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 10</div>
+    <img src="images/img3.jpg" alt="image3">
+    
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 10</div>
+    <img src="images/img4.jpg" alt="image4">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5/ 10</div>
+    <img src="images/img5.jpg" alt="image5">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 10</div>
+    <img src="images/img6.jpg" alt="image6">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 10</div>
+    <img src="images/img7.jpg" alt="image7">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 10</div>
+    <img src="images/img8.jpg" alt="image8">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 10</div>
+    <img src="images/img9.jpg" alt="image9">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">10 / 10</div>
+    <img src="images/img10.jpg" alt="image10">
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+</div>
+
+<script src="script.js"></script>
+
 </body>
-
 </html>
