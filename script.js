@@ -1,52 +1,27 @@
-let slider = ["image1.jpg", "image2.jpg", "image3.png"]; // Creating slider images array
-let slider_opt = { next: 0, prev: 0, current: 0, slider_max: (slider.length - 1) }; // creating slider option
+let slideIndex = 0;
+showSlides(slideIndex);
 
-let slider_img = document.getElementById("slider_img");
-// Setting a delay timer
-setInterval(() => {
-  sliderLogic(slider_opt);
-  slider_img.setAttribute("src", "./images/" + slider[slider_opt.current]);
-  slider_img.setAttribute("pos", slider_opt.current);
-  //console.log(slider_opt)
-}, 5000)
-
-function sliderLogic(slider_opt) {
-  if (slider_opt.current === slider_opt.slider_max) {
-    slider_opt.next = 0;
-    slider_opt.prev = slider_opt.slider_max;
-    slider_opt.current = 0;
-  } else {
-    ++slider_opt.current;
-    slider_opt.next = slider_opt.current + 1;
-    slider_opt.prev = slider_opt.current - 1;
-  }
-
+function plusSlides(n) {
+  showSlides(slideIndex += n);
 }
 
-slider_img.addEventListener("mouseover", () => {
-  var slider_btn = document.getElementsByClassName("slider_btn");
-  slider_btn.classList.remove("hide");
-})
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
 
-slider_img.addEventListener("mouseout", () => {
-  var slider_btn = document.getElementsByClassName("slider_btn");
-  //slider_btn.classList.add("hide");
-})
-
-
-let nextSlider_ = document.getElementByClassName("slider_img");
-nextSlider_.addEventListener("click", () => {
-  var pos = nextSlider_.getAttribute("pos");
-  nextSlider(pos, slider_opt);
-  slider_img.setAttribute("src", "./images/" + slider[slider_opt.current]);
-  slider_img.setAttribute("pos", slider_opt.current);
-
-})
-
-
-function nextSlider(pos, slider_opt) {
-  var pos = Integer.parse(pos);
-  slider_opt.next = pos;
-  slider_opt.prev = pos - 1;
-  slider_opt.current = pos;
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  //setTimeout(showSlides, 3000); // Change image every 3 seconds
 }
